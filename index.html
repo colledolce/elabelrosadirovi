@@ -1,95 +1,127 @@
 <!DOCTYPE html>
-<html lang="it" class="lang-it">
+<html lang="it" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>e‑label – Rosa di Rovi 2024</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
+    /* Lingue toggle */
+    [data-lang="en"]{display:none;}
+    .lang-it [data-lang="it"], .lang-en [data-lang="en"]{display:block;}
+    .lang-it [data-lang="en"], .lang-en [data-lang="it"]{display:none;}
+    /* Palette sobria: rosa polvere & grigi tenui */
     :root{
-      --accent:#f0eaea;
-      --accent-border:#e5d4d4;
+      --rose:#e9b4a7; /* soft brush color */
+      --rose-dark:#d28e7b;
     }
-    body{background:#ffffff;font-family:ui-sans-serif,system-ui,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#1f2937}
-    h1.logo{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:0.02em;font-size:3rem;text-transform:uppercase;margin:0.5rem 0;color:#111827}
-    .border-box{border:1px solid var(--accent-border);border-radius:0.5rem;background:var(--accent);padding:1rem}
-    #langBtn{border:1px solid var(--accent-border);background:#fff;border-radius:0.375rem;padding:0.25rem 0.5rem;box-shadow:0 1px 2px rgb(0 0 0 / .1)}
-    [data-lang]{display:none}
-    .lang-it [data-lang="it"],.lang-en [data-lang="en"],.lang-de [data-lang="de"],.lang-fr [data-lang="fr"],.lang-es [data-lang="es"],.lang-pt [data-lang="pt"],.lang-hr [data-lang="hr"],.lang-sl [data-lang="sl"],.lang-bg [data-lang="bg"],.lang-cs [data-lang="cs"],.lang-da [data-lang="da"],.lang-et [data-lang="et"],.lang-fi [data-lang="fi"],.lang-el [data-lang="el"],.lang-ga [data-lang="ga"],.lang-lv [data-lang="lv"],.lang-lt [data-lang="lt"],.lang-mt [data-lang="mt"],.lang-nl [data-lang="nl"],.lang-pl [data-lang="pl"],.lang-ro [data-lang="ro"],.lang-sk [data-lang="sk"],.lang-sv [data-lang="sv"],.lang-hu [data-lang="hu"]{display:block}
   </style>
 </head>
-<body>
-  <main class="max-w-screen-md mx-auto p-4 text-center">
-    <img src="logo-colledolce.jpg" alt="Colledolce" class="mx-auto max-w-xs mb-4">
-    <h1 class="logo">ROSA DI ROVI</h1>
+<body class="lang-it bg-gray-50 text-gray-800 font-sans max-w-2xl mx-auto p-6">
 
-    <!-- language selector -->
-    <div class="relative inline-block mb-6">
-      <button id="langBtn" aria-label="Select language" class="flex items-center gap-1">
-        <span id="flagCurrent">🇮🇹</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z" clip-rule="evenodd"/></svg>
-      </button>
-      <div id="langMenu" class="absolute right-0 z-10 hidden grid grid-cols-4 gap-2 p-3 mt-1 bg-white border rounded shadow-md max-w-xs">
-      </div>
-    </div>
+  <!-- Intestazione con logo e nome vino -->
+  <header class="text-center mb-8">
+    <img src="logo-colledolce.jpg" alt="Logo Colledolce" class="h-24 mx-auto mb-4">
+    <h1 class="text-5xl font-serif tracking-widest text-gray-900">
+      Rosa di <span class="font-black">Rovi</span>
+    </h1>
+    <p class="mt-2 text-lg uppercase tracking-widest text-rose-700">Etna Rosato DOC – 2024</p>
 
-    <!-- INGREDIENTI / INGREDIENTS -->
-    <section class="border-box mb-6" data-lang="it">
-      <h2 class="text-xl font-semibold mb-2">Ingredienti</h2>
-      <p>Uva<br>Metabisolfito di potassio E224</p>
-    </section>
-    <section class="border-box mb-6" data-lang="en">
-      <h2 class="text-xl font-semibold mb-2">Ingredients</h2>
-      <p>Grapes<br>Potassium metabisulphite E224</p>
-    </section>
+    <!-- Pulsante cambio lingua -->
+    <button id="langBtn" class="mt-4 text-sm underline text-rose-700 hover:text-rose-dark">English</button>
+  </header>
 
-    <!-- NUTRIZIONE / NUTRITION -->
-    <section class="border-box mb-6" data-lang="it">
-      <h2 class="text-xl font-semibold mb-2">Dichiarazione nutrizionale (per 100&nbsp;ml)</h2>
-      <table class="min-w-full text-left"><tbody><tr><td class="pr-4">Energia</td><td>276&nbsp;kJ / 66&nbsp;kcal</td></tr><tr><td>Grassi</td><td>0&nbsp;g</td></tr><tr><td>di cui saturi</td><td>0&nbsp;g</td></tr><tr><td>Carboidrati</td><td>2&nbsp;g</td></tr><tr><td>di cui zuccheri</td><td>0,07&nbsp;g</td></tr><tr><td>Proteine</td><td>0,1&nbsp;g</td></tr><tr><td>Sale</td><td>0,5&nbsp;g</td></tr></tbody></table>
-    </section>
-    <section class="border-box mb-6" data-lang="en">
-      <h2 class="text-xl font-semibold mb-2">Nutrition declaration (per 100&nbsp;ml)</h2>
-      <table class="min-w-full text-left"><tbody><tr><td class="pr-4">Energy</td><td>276&nbsp;kJ / 66&nbsp;kcal</td></tr><tr><td>Fat</td><td>0&nbsp;g</td></tr><tr><td>of which saturates</td><td>0&nbsp;g</td></tr><tr><td>Carbohydrates</td><td>2&nbsp;g</td></tr><tr><td>of which sugars</td><td>0.07&nbsp;g</td></tr><tr><td>Protein</td><td>0.1&nbsp;g</td></tr><tr><td>Salt</td><td>0.5&nbsp;g</td></tr></tbody></table>
-    </section>
+  <!-- Sezione Ingredienti -->
+  <section class="mb-8">
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="it">Ingredienti</h2>
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="en">Ingredients</h2>
 
-    <!-- SMALTIMENTO solo IT -->
-    <section class="border-box mb-6" data-lang="it">
-      <h2 class="text-xl font-semibold mb-2">Smaltimento imballaggi</h2>
-      <div class="flex justify-center gap-8 text-sm">
-        <div class="flex flex-col items-center"><span class="text-3xl">♻️</span><span>GL71</span></div>
-        <div class="flex flex-col items-center"><span class="text-3xl">♻️</span><span>FOR51</span></div>
-        <div class="flex flex-col items-center"><span class="text-3xl">♻️</span><span>C7ALU 90</span></div>
-      </div>
-    </section>
-  </main>
+    <!-- Tabella IT -->
+    <table class="w-full text-sm border border-rose-200 bg-white" data-lang="it">
+      <tbody>
+        <tr class="border-b border-rose-100"><td class="p-2">Uva</td></tr>
+        <tr><td class="p-2">Metabisolfito di potassio&nbsp;E224</td></tr>
+      </tbody>
+    </table>
 
+    <!-- Tabella EN -->
+    <table class="w-full text-sm border border-rose-200 bg-white" data-lang="en">
+      <tbody>
+        <tr class="border-b border-rose-100"><td class="p-2">Grapes</td></tr>
+        <tr><td class="p-2">Potassium metabisulphite&nbsp;E224</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sezione Valori nutrizionali -->
+  <section class="mb-8">
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="it">Valori nutrizionali (per 100&nbsp;ml)</h2>
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="en">Nutrition declaration (per 100&nbsp;ml)</h2>
+
+    <!-- Tabella IT -->
+    <table class="w-full text-sm border border-rose-200 bg-white" data-lang="it">
+      <tbody>
+        <tr class="border-b border-rose-100"><td class="p-2">Energia</td><td class="p-2">276&nbsp;kJ / 66&nbsp;kcal</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Grassi</td><td class="p-2">0&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="pl-6 p-2">di cui acidi grassi saturi</td><td class="p-2">0&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Carboidrati</td><td class="p-2">2&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="pl-6 p-2">di cui zuccheri</td><td class="p-2">0,07&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Proteine</td><td class="p-2">0,1&nbsp;g</td></tr>
+        <tr><td class="p-2">Sale</td><td class="p-2">0,5&nbsp;g</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Tabella EN -->
+    <table class="w-full text-sm border border-rose-200 bg-white" data-lang="en">
+      <tbody>
+        <tr class="border-b border-rose-100"><td class="p-2">Energy</td><td class="p-2">276&nbsp;kJ / 66&nbsp;kcal</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Fat</td><td class="p-2">0&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="pl-6 p-2">of which saturates</td><td class="p-2">0&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Carbohydrate</td><td class="p-2">2&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="pl-6 p-2">of which sugars</td><td class="p-2">0.07&nbsp;g</td></tr>
+        <tr class="border-b border-rose-100"><td class="p-2">Protein</td><td class="p-2">0.1&nbsp;g</td></tr>
+        <tr><td class="p-2">Salt</td><td class="p-2">0.5&nbsp;g</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Sezione Smaltimento imballaggi -->
+  <section class="mb-8">
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="it">Smaltimento imballaggi</h2>
+    <h2 class="font-semibold text-lg mb-3 border-l-4 border-rose-400 pl-3" data-lang="en">Packaging disposal</h2>
+    <ul class="list-none space-y-2 text-sm bg-white p-4 border border-rose-200 rounded">
+      <li>
+        Bottiglia vetro – 
+        <span class="inline-block border border-gray-400 rounded px-2 py-0.5 font-mono text-xs">GL71</span>
+        <span data-lang="en">(Glass bottle)</span>
+      </li>
+      <li>
+        Tappo sughero – 
+        <span class="inline-block border border-gray-400 rounded px-2 py-0.5 font-mono text-xs">FOR51</span>
+        <span data-lang="en">(Cork)</span>
+      </li>
+      <li>
+        Capsula alluminio – 
+        <span class="inline-block border border-gray-400 rounded px-2 py-0.5 font-mono text-xs">C7ALU&nbsp;90</span>
+        <span data-lang="en">(Aluminium capsule)</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Sezione QR link descrittiva -->
+  <section class="text-center text-xs text-gray-500">
+    <p data-lang="it">Scansiona il QR sull'etichetta per visualizzare queste informazioni online.</p>
+    <p data-lang="en">Scan the on‑label QR code to view this information online.</p>
+  </section>
+
+  <!-- JS: toggle lingua -->
   <script>
-  (function(){
-    const langs=[["it","Italiano","🇮🇹"],["en","English","🇬🇧"],["de","Deutsch","🇩🇪"],["fr","Français","🇫🇷"],["es","Español","🇪🇸"],["pt","Português","🇵🇹"],["hr","Hrvatski","🇭🇷"],["sl","Slovenščina","🇸🇮"],["bg","Български","🇧🇬"],["cs","Čeština","🇨🇿"],["da","Dansk","🇩🇰"],["et","Eesti","🇪🇪"],["fi","Suomi","🇫🇮"],["el","Ελληνικά","🇬🇷"],["ga","Gaeilge","🇮🇪"],["lv","Latviešu","🇱🇻"],["lt","Lietuvių","🇱🇹"],["mt","Malti","🇲🇹"],["nl","Nederlands","🇳🇱"],["pl","Polski","🇵🇱"],["ro","Română","🇷🇴"],["sk","Slovenčina","🇸🇰"],["sv","Svenska","🇸🇪"],["hu","Magyar","🇭🇺"]];
-
-    const html=document.documentElement;
-    const btn=document.getElementById('langBtn');
-    const menu=document.getElementById('langMenu');
-    const flagCurrent=document.getElementById('flagCurrent');
-
-    langs.forEach(([code,label,flag])=>{
-      const b=document.createElement('button');
-      b.className='w-12 h-10 text-2xl flex items-center justify-center hover:bg-gray-200 rounded';
-      b.textContent=flag;
-      b.title=label;
-      b.onclick=()=>switchLang(code,flag);
-      menu.appendChild(b);
-    });
-
-    btn.onclick=()=>menu.classList.toggle('hidden');
-
-    function switchLang(code,flag){
-      flagCurrent.textContent=flag;
-      menu.classList.add('hidden');
-      html.className='lang-'+code;
-    }
-  })();
+  const btn = document.getElementById('langBtn');
+  btn.addEventListener('click', ()=>{
+      document.body.classList.toggle('lang-en');
+      document.body.classList.toggle('lang-it');
+      btn.textContent = document.body.classList.contains('lang-en') ? 'Italiano' : 'English';
+  });
   </script>
 </body>
 </html>
