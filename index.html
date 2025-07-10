@@ -1,59 +1,80 @@
-<!DOCTYPE html><html lang="it"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rosa di Rovi | e-label (IT)</title>
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet">
-</head><body class="bg-gray-50 text-gray-800 font-sans p-6 max-w-2xl mx-auto">
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rosa di Rovi — e‑label</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.4/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    :root{
+      --rose:#c1295d;        /* colore primario */
+      --rose-light:#f6d7e1;  /* bordi/chips */
+    }
+    .chip{ @apply px-2 py-[1px] text-[10px] rounded border border-[color:var(--rose)]; }
+    .card{ @apply border rounded-md border-[color:var(--rose)] bg-white/80 backdrop-blur-sm; }
+    .bar{ @apply inline-block w-1 h-6 bg-[color:var(--rose)]; }
+    .title-serif{ font-family:"Playfair Display",ui-serif,Georgia,Times,serif; }
+  </style>
+</head>
+<body class="bg-[#fafbfc] text-gray-800 tracking-wide flex justify-center min-h-screen pt-6 pb-16">
+  <main class="w-full max-w-xl px-6">
+    <!-- NAV lingue -->
+    <nav class="flex flex-wrap justify-center gap-2 mb-10 text-sm">
+      <a class="px-3 py-1 rounded-full bg-[color:var(--rose)] text-white shadow" href="index.html">IT</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="en-gb.html">EN‑GB</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="en-us.html">EN‑US</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="es.html">ES</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="fr.html">FR</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="de.html">DE</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="pt.html">PT</a>
+      <a class="px-3 py-1 rounded-full ring-1 ring-[color:var(--rose-light)] hover:bg-[color:var(--rose)] hover:text-white" href="sv.html">SV</a>
+    </nav>
 
-<nav class="mb-6 text-sm"><ul class="flex flex-wrap gap-x-3">
-<li class="font-semibold">IT</li>
-<li><a href="en-gb.html" class="underline">EN-GB</a></li>
-<li><a href="en-us.html" class="underline">EN-US</a></li>
-<li><a href="es.html"    class="underline">ES</a></li>
-<li><a href="fr.html"    class="underline">FR</a></li>
-<li><a href="de.html"    class="underline">DE</a></li>
-<li><a href="pt.html"    class="underline">PT</a></li>
-<li><a href="sv.html"    class="underline">SV</a></li>
-</ul></nav>
+    <!-- HEADER -->
+    <header class="text-center mb-12">
+      <h1 class="title-serif text-[44px] md:text-5xl font-semibold uppercase tracking-wider mb-2">Rosa di <strong class="font-black">Rovi</strong></h1>
+      <p class="tracking-[0.15em] text-[15px] text-[color:var(--rose)]">ETNA ROSATO DOC – 2024</p>
+    </header>
 
-<header class="text-center mb-8">
-  <img src="logo-colledolce.jpg" alt="Colledolce" class="h-24 mx-auto mb-4">
-  <h1 class="text-4xl font-serif tracking-wide">Rosa di <strong>Rovi</strong></h1>
-  <p class="mt-2 uppercase tracking-wider text-rose-700">Etna Rosato DOC 2024</p>
-</header>
+    <!-- INGREDIENTI -->
+    <section class="mb-12">
+      <h2 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="bar"></span> Ingredienti</h2>
+      <div class="card">
+        <table class="w-full text-sm"><tbody>
+          <tr class="border-b last:border-b-0 border-[color:var(--rose-light)]"><td class="p-3">Uva</td></tr>
+          <tr><td class="p-3">Metabisolfito di potassio E224</td></tr>
+        </tbody></table>
+      </div>
+    </section>
 
-<section class="mb-8">
-  <h2 class="font-semibold text-lg border-l-4 border-rose-400 pl-3 mb-3">Ingredienti</h2>
-  <table class="w-full text-sm border border-rose-200 bg-white"><tbody>
-    <tr class="border-b border-rose-100"><td class="p-2">Uva</td></tr>
-    <tr><td class="p-2">Metabisolfito di potassio E224</td></tr>
-  </tbody></table>
-</section>
+    <!-- VALORI NUTRIZIONALI -->
+    <section class="mb-12">
+      <h2 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="bar"></span> Valori nutrizionali (per 100 ml)</h2>
+      <div class="card">
+        <table class="w-full text-sm"><tbody>
+          <tr class="bg-[color:var(--rose-light)]/40 font-medium"><td class="p-3">Energia</td><td class="p-3 text-right">276 kJ / 66 kcal</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Grassi</td><td class="p-3 text-right">0 g</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="pl-8 p-3">di cui acidi grassi saturi</td><td class="p-3 text-right">0 g</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Carboidrati</td><td class="p-3 text-right">2 g</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="pl-8 p-3">di cui zuccheri</td><td class="p-3 text-right">0,07 g</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Proteine</td><td class="p-3 text-right">0,1 g</td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Sale</td><td class="p-3 text-right">0,5 g</td></tr>
+        </tbody></table>
+      </div>
+    </section>
 
-<section class="mb-8">
-  <h2 class="font-semibold text-lg border-l-4 border-rose-400 pl-3 mb-3">Valori nutrizionali (per 100 ml)</h2>
-  <table class="w-full text-sm border border-rose-200 bg-white"><tbody>
-    <tr class="border-b border-rose-100"><td class="p-2">Energia</td><td class="p-2">276 kJ / 66 kcal</td></tr>
-    <tr class="border-b border-rose-100"><td class="p-2">Grassi</td><td class="p-2">0 g</td></tr>
-    <tr class="border-b border-rose-100"><td class="pl-6 p-2">di cui acidi grassi saturi</td><td class="p-2">0 g</td></tr>
-    <tr class="border-b border-rose-100"><td class="p-2">Carboidrati</td><td class="p-2">2 g</td></tr>
-    <tr class="border-b border-rose-100"><td class="pl-6 p-2">di cui zuccheri</td><td class="p-2">0,07 g</td></tr>
-    <tr class="border-b border-rose-100"><td class="p-2">Proteine</td><td class="p-2">0,1 g</td></tr>
-    <tr><td class="p-2">Sale</td><td class="p-2">0,5 g</td></tr>
-  </tbody></table>
-</section>
-
-<!-- Smaltimento (solo IT) -->
-<section class="mb-8">
-  <h2 class="font-semibold text-lg border-l-4 border-rose-400 pl-3 mb-3">Smaltimento imballaggi</h2>
-  <table class="w-full text-sm border border-rose-200 bg-white"><tbody>
-    <tr class="border-b border-rose-100"><td class="p-2">Bottiglia vetro</td><td class="p-2">GL 71 – Racc. vetro</td></tr>
-    <tr class="border-b border-rose-100"><td class="p-2">Tappo sughero</td><td class="p-2">FOR 51 – Organico</td></tr>
-    <tr><td class="p-2">Capsula alluminio</td><td class="p-2">C/ALU 90 – Metalli</td></tr>
-  </tbody></table>
-  <p class="text-xs mt-2 italic">Verifica le disposizioni del tuo Comune.</p>
-</section>
-
-<footer class="text-center text-xs text-gray-500 mt-10">
-  © 2024 Colledolce | Sicilia — 13 % vol
-</footer>
-</body></html>
+    <!-- SMALTIMENTO (solo IT) -->
+    <section>
+      <h2 class="text-lg font-semibold mb-3 flex items-center gap-2"><span class="bar"></span> Smaltimento imballaggi</h2>
+      <div class="card">
+        <table class="w-full text-sm"><tbody>
+          <tr class="bg-[color:var(--rose-light)]/40 font-medium"><td class="p-3">Bottiglia vetro</td><td class="p-3 text-right"><span class="chip">GL71</span></td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Tappo sughero</td><td class="p-3 text-right"><span class="chip">FOR51</span></td></tr>
+          <tr class="even:bg-[color:var(--rose-light)]/20"><td class="p-3">Capsula alluminio</td><td class="p-3 text-right"><span class="chip">C/ALU 90</span></td></tr>
+        </tbody></table>
+      </div>
+      <p class="text-xs mt-2 italic text-center text-gray-500">Verifica le disposizioni del tuo Comune.</p>
+    </section>
+  </main>
+</body>
+</html>
